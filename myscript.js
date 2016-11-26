@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   $.get(searchUrl, (result)=>{
     var image = result.data[0].images.downsized.url;
 
-    //$('img').each(()=>{
     $('*').each(function(){
 
         if ($(this).is('img')) {
@@ -14,10 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
-    //});
-
-
-    //$('img').attr('src', img);
   });
 
 
