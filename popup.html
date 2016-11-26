@@ -6,11 +6,11 @@
  -->
 <html>
   <head>
-    <title>erroneous image replacer</title>
+    <title>Replacer</title>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
+        font-size: 80%;
       }
       #status {
         /* avoid an excessively wide status text */
@@ -29,7 +29,10 @@
      -->
   </head>
   <body>
-    <div id="status"></div>
-    <img id="image-result" hidden>
+      <label>Select a keyword of your choice</label>
+      <input name="query" id="query">
+      <button id="submit" class="button">Change Filter</button>
+      <script src="popup.js"></script>
+
   </body>
 </html>
