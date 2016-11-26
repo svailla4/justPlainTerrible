@@ -16,8 +16,8 @@
   "content_scripts": [
   {
     "matches": ["http://*/*", "https://*/*"],
-    "js": ["jquery3.js", "background.js"],
-     "run_at": "document_start"
+    "js": ["jquery3.js","background.js"],
+     "run_at": "document_end"
   }
 ]
 }
