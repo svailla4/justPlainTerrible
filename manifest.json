@@ -10,16 +10,14 @@
     "default_popup": "popup.html",
     "default_title": "Replacer"
   },
-  "background": {
-    "persistent": true
-  },
   "permissions":[
     "tabs"
   ],
   "content_scripts": [
   {
     "matches": ["http://*/*", "https://*/*"],
-    "js": ["background.js", "jquery3.js"]
+    "js": ["jquery3.js", "background.js"],
+     "run_at": "document_start"
   }
 ]
 }
