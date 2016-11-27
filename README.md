@@ -1,5 +1,9 @@
-Project Name: justPlainTerrible
+>Project Name: justPlainTerrible
 
-##Developed by: [https://github.com/svailla4](Stephane) and [https://github.com/wjjameslee](James)
+##Developed by: [Stephane](https://github.com/svailla4) and [James](https://github.com/wjjameslee)
 
-##Google Chrome Extension, replacing <img> tags with Cats! MEOW!
+##Google Chrome Extension, replacing `<img>` tags with GIFs of cats!
+
+- [X] Terrible
+- [X] Javascript
+- [X] Cats
