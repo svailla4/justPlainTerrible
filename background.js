@@ -1,26 +1,13 @@
-var search;
 
-
-//var search = "cats";
+var search = "cats";
 
 var randomNumber = ()=>{
   return Math.floor((Math.random() * 100));
 }
 
-
-
-$(document).ready(function() {
-  chrome.storage.sync.get("data", function(items) {
-    if(items){
-      search = items.data;
-    }else{
-      search = "cats";
-    }
-  });
-
-  console.log("work");
-
+function getImages() {
   var searchUrl = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=dc6zaTOxFJmzC&limit=100`;
+  $.get(searchUrl, (result)=>{
 
     $('*').each(function(){
 
@@ -34,3 +21,15 @@ $(document).ready(function() {
     });
 
   });
+
+}
+
+$(document).ready(function() {
+  getImages();
+  $(window).scroll(function(){
+        if ($(window).scrollTop() > 100){
+            getImages();
+        }
+    });
+
+});
