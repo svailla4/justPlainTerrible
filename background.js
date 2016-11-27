@@ -1,13 +1,32 @@
+var search;
 
-var search = "cats";
+
+//var search = "cats";
 
 var randomNumber = ()=>{
   return Math.floor((Math.random() * 100));
 }
 
-function getImages() {
+var sendMsg = ()=>{
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+  chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
+    alert(response.farewell);
+  });
+});
+};
+
+$(document).ready(function() {
+  chrome.storage.sync.get("data", function(items) {
+    if(items){
+      search = items.data;
+    }else{
+      search = "cats";
+    }
+  });
+
+  console.log("work");
+
   var searchUrl = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=dc6zaTOxFJmzC&limit=100`;
-  $.get(searchUrl, (result)=>{
 
     $('*').each(function(){
 
@@ -21,15 +40,3 @@ function getImages() {
     });
 
   });
-
-}
-
-$(document).ready(function() {
-  getImages();
-  $(window).scroll(function(){
-        if ($(window).scrollTop() > 100){
-            getImages();
-        }
-    });
-
-});
