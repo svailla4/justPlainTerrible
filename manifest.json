@@ -17,7 +17,7 @@
   {
     "matches": ["http://*/*", "https://*/*"],
     "js": ["jquery3.js","background.js"],
-     "run_at": "document_end"
+    "run_at": "document_end"
   }
 ]
 }
